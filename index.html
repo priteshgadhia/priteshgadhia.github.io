@@ -70,12 +70,12 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 .pager{position:fixed;top:0;left:0;right:0;bottom:0;z-index:100}
 .page{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;pointer-events:none;transition:opacity .7s ease;-webkit-transition:opacity .7s ease}
 .page.active{opacity:1;pointer-events:all}
-.page-scroll{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden}
+.page-scroll{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column}
 .page-scroll::-webkit-scrollbar{width:3px}
 .page-scroll::-webkit-scrollbar-track{background:transparent}
 .page-scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:2px}
-.page-inner{min-height:100%;display:flex;flex-direction:column;justify-content:center;padding:7rem 4.5rem 6rem}
-.page-inner.top{justify-content:flex-start;padding-top:8rem}
+.page-inner{min-height:100%;display:flex;flex-direction:column;justify-content:center;padding:7rem 4.5rem 6rem;flex:1}
+.page-inner.top{justify-content:flex-start;padding-top:7rem;padding-bottom:5rem}
 
 /* ── Shared typography ── */
 .sl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:3rem;display:flex;align-items:center;gap:1.5rem}
