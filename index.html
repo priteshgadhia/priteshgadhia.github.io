@@ -45,14 +45,10 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── Force burger/mobile hidden on desktop ── */
-@media(min-width:769px){
-  .burger{display:none !important}
-  .menu-overlay{display:none !important}
-  .mobile-nav-bar{display:none !important}
-}
+/* min-width rule moved to end */
 
 /* ── Dots ── */
-.dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.dots{display:none}
 .dot{width:10px;height:10px;border-radius:50%;background:rgba(244,242,237,.2);cursor:pointer;transition:background .3s,transform .3s;border:2px solid rgba(244,242,237,.25);padding:0}
 .dot.active{background:var(--accent);border-color:var(--accent);transform:scale(1.3)}
 .dot:hover{background:rgba(244,242,237,.6);border-color:rgba(244,242,237,.6)}
@@ -182,7 +178,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 /* ══════════════════════════════════
    PAGE 7 — CONTACT
 ══════════════════════════════════ */
-.p-contact{background:var(--charcoal);position:relative;overflow:hidden}
+.p-contact{background:var(--charcoal);overflow:hidden}
+.p-contact .page-inner{display:grid !important;flex-direction:unset !important}
 .p-contact::after{content:'';display:none}
 .contact-heading{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;max-width:640px;margin-bottom:1.2rem}
 .contact-heading em{color:var(--accent);font-style:italic}
@@ -270,7 +267,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 
   /* Contact mobile */
   .contact-heading{font-size:2rem !important}
-  .p-contact .page-inner{grid-template-columns:1fr !important;gap:2rem !important}
+  
   .contact-links{flex-direction:column !important;gap:1rem !important}
   .p-contact::after{display:none !important}
 }
@@ -373,6 +370,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   .menu-overlay{display:flex !important}
   .mobile-nav-bar{display:flex !important}
 }
+/* min-width rule moved to end */
+/* ── Force desktop overrides — must be last ── */
 @media(min-width:769px){
   .burger{display:none !important}
   .menu-overlay{display:none !important}
@@ -390,7 +389,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   <span class="nav-logo" onclick="goTo(0)">Pritesh Gadhia</span>
   <ul class="nav-links-top">
     <li><a onclick="goTo(1)">About</a></li>
-    <li><a onclick="goTo(2)">Leadership</a></li>
+    <li><a onclick="goTo(2)">Perspective</a></li>
     <li><a onclick="goTo(3)">Clients</a></li>
     <li><a onclick="goTo(4)">Contact</a></li>
   </ul>
@@ -403,7 +402,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 <div class="menu-overlay" id="menu-overlay">
   <div class="menu-item" onclick="goTo(0);closeMenu()"><span class="menu-num">01</span>Home</div>
   <div class="menu-item" onclick="goTo(1);closeMenu()"><span class="menu-num">02</span>About</div>
-  <div class="menu-item" onclick="goTo(2);closeMenu()"><span class="menu-num">03</span>Leadership</div>
+  <div class="menu-item" onclick="goTo(2);closeMenu()"><span class="menu-num">03</span>Perspective</div>
   <div class="menu-item" onclick="goTo(3);closeMenu()"><span class="menu-num">04</span>Clients</div>
   <div class="menu-item" onclick="goTo(4);closeMenu()"><span class="menu-num">05</span>Contact</div>
 </div>
@@ -444,7 +443,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   <div class="hero-wrap">
     <div class="hero-left">
       <p class="hero-eyebrow">Leadership · Advisory · Digital Transformation · AI</p>
-      <h1 class="hero-name">30+ years of<br>transformation.<br><em>AI is next.</em></h1>
+      <h1 class="hero-name">30+ years of<br>transformation.<br><em>The work that makes AI possible.</em></h1>
       <p class="hero-desc"><strong>Pritesh Gadhia</strong> has been at the forefront of every major technology wave from the pre-internet era through to AI — growing billion-dollar practices, rescuing stalled programmes, building high-performing teams and the leadership cultures that make change stick.</p>
       <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:1.5rem">Available for advisory, board and senior leadership roles</p>
       <div class="hero-career">
@@ -548,7 +547,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   <!-- DESKTOP -->
   <div class="page-scroll m-hide-mobile">
     <div class="page-inner top">
-      <p class="sl">Leadership, Advisory &amp; Coaching</p>
+      <p class="sl">Where Transformation Really Happens</p>
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:400;line-height:1.4;color:var(--paper);margin-bottom:2.5rem;max-width:680px">Technology is rarely the problem.<br><em style="color:var(--accent)">Leadership, culture and conviction are.</em></p>
       <div class="leadership-grid" style="display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:start">
         <div>
           <p class="leadership-body" style="font-size:15px;color:var(--muted);line-height:1.95;margin-bottom:1.5rem">Great digital transformation is hard. Most organisations that have tried it quickly discover that the technology is rarely the problem. The real challenge is leadership alignment, getting the right foundations in place, and sustaining momentum through the difficult middle where most programmes quietly stall. Pritesh has spent more than 30 years helping organisations navigate exactly that. Fractured governance, misaligned data, change-resistant cultures — he has seen every version of it and knows how to fix it.</p>
@@ -731,37 +731,15 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   <div class="page-inner m-hide-mobile" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
     <div>
       <p class="sl">Get in touch</p>
-      <h2 class="contact-heading">Available for <em>advisory,<br>board</em> and senior<br>leadership roles.</h2>
-      <p class="contact-sub">Open to conversations about non-executive roles, advisory partnerships, leadership coaching, and keynote speaking. If you are navigating a complex transformation or building a leadership team that needs to perform under pressure, get in touch.</p>
+      <h2 class="contact-heading"><em>Senior advisory,</em><br>board roles and<br>transformation leadership.</h2>
+      <p class="contact-sub">If the challenge is complex, that is where this conversation starts.</p>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/priteshgadhia" class="contact-link" target="_blank">LinkedIn</a>
         <a href="mailto:me@priteshgadhia.com" class="contact-link">me@priteshgadhia.com</a>
       </div>
     </div>
-    <div style="overflow-y:auto;max-height:80vh">
-      <p style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.5vw,1.25rem);font-weight:400;line-height:1.45;color:var(--paper);margin-bottom:1.8rem;font-style:italic">"Transformation is not a delivery problem. It is a trust problem."</p>
-      <div style="display:flex;flex-direction:column;gap:1.4rem">
-        <div style="padding-left:0">
-          <p style="font-family:'DM Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:.18em;margin-bottom:.3rem">01</p>
-          <p style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:500;margin-bottom:.4rem;color:var(--paper)">Radical clarity over false certainty</p>
-          <p style="font-size:12px;color:var(--muted);line-height:1.75">The most dangerous moment in any programme is when teams stop saying what they see. Creating environments where uncomfortable truths travel upward faster than good news, because late honesty always costs more than early discomfort.</p>
-        </div>
-        <div style="padding-left:0">
-          <p style="font-family:'DM Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:.18em;margin-bottom:.3rem">02</p>
-          <p style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:500;margin-bottom:.4rem;color:var(--paper)">Senior presence as a stabilising force</p>
-          <p style="font-size:12px;color:var(--muted);line-height:1.75">When a programme enters crisis, the instinct is to send more process. The right response is to send judgement. 30 years of pattern recognition enables a clear distinction between signal and noise before others see the shape of the problem.</p>
-        </div>
-        <div style="padding-left:0">
-          <p style="font-family:'DM Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:.18em;margin-bottom:.3rem">03</p>
-          <p style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:500;margin-bottom:.4rem;color:var(--paper)">Empathy is a delivery methodology</p>
-          <p style="font-size:12px;color:var(--muted);line-height:1.75">Consistently identified by teams as a leader who makes people feel heard, valued and empowered — not as a cultural nicety, but as the mechanism that unlocks accountability and sustains delivery quality across long, difficult programmes.</p>
-        </div>
-        <div style="padding-left:0">
-          <p style="font-family:'DM Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:.18em;margin-bottom:.3rem">04</p>
-          <p style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:500;margin-bottom:.4rem;color:var(--paper)">Commercial integrity as relationship infrastructure</p>
-          <p style="font-size:12px;color:var(--muted);line-height:1.75">Long-term client relationships are built on moments where you put the right answer above the convenient one. Recovering a client relationship means being the person who can say what no one else will and then proving it with outcomes.</p>
-        </div>
-      </div>
+    <div style="display:flex;align-items:center;justify-content:flex-start;padding-left:2rem;border-left:1px solid rgba(244,242,237,.1)">
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;line-height:1.55;color:var(--paper);font-style:italic">"Transformation is not a delivery problem.<br>It is a trust problem."</p>
     </div>
   </div>
 
@@ -769,44 +747,20 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   <div class="m-carousel" id="contact-carousel" style="background:var(--charcoal)">
     <div class="m-carousel-track" id="contact-track">
 
-      <!-- Slide 1: Contact details -->
+      <!-- Slide 1: Pull quote -->
+      <div class="m-carousel-slide" style="display:flex;align-items:center">
+        <p style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:var(--paper);line-height:1.55;border-left:2px solid var(--accent);padding-left:1.2rem">"Transformation is not a delivery problem.<br>It is a trust problem."</p>
+      </div>
+
+      <!-- Slide 2: Contact details -->
       <div class="m-carousel-slide">
         <p class="sl" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem">Get in touch<span style="flex:1;height:1px;background:rgba(244,242,237,.09);max-width:60px;display:block"></span></p>
-        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem">Available for <em style="color:var(--accent);font-style:italic">advisory, board</em> and senior leadership roles.</h2>
-        <p style="font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:1.5rem">Open to conversations about non-executive roles, advisory partnerships, leadership coaching, and keynote speaking.</p>
+        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem"><em style="color:var(--accent);font-style:italic">Senior advisory,</em><br>board roles and<br>transformation leadership.</h2>
+        <p style="font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:1.5rem">If the challenge is complex, that is where this conversation starts.</p>
         <div style="display:flex;flex-direction:column;gap:.8rem">
           <a href="https://www.linkedin.com/in/priteshgadhia" class="contact-link" target="_blank">LinkedIn</a>
           <a href="mailto:me@priteshgadhia.com" class="contact-link">me@priteshgadhia.com</a>
         </div>
-      </div>
-
-      <!-- Slide 2: Philosophy intro + pillar 1 -->
-      <div class="m-carousel-slide">
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--paper);margin-bottom:1.5rem;line-height:1.4">"Transformation is not a delivery problem. It is a trust problem."</p>
-        <p class="m-phil-num">01</p>
-        <p class="m-phil-title">Radical clarity over false certainty</p>
-        <p class="m-phil-body">The most dangerous moment in any programme is when teams stop saying what they see. Creating environments where uncomfortable truths travel upward faster than good news, because late honesty always costs more than early discomfort.</p>
-      </div>
-
-      <!-- Slide 3: Pillar 2 -->
-      <div class="m-carousel-slide">
-        <p class="m-phil-num">02</p>
-        <p class="m-phil-title">Senior presence as a stabilising force</p>
-        <p class="m-phil-body">When a programme enters crisis, the instinct is to send more process. The right response is to send judgement. 30 years of pattern recognition enables a clear distinction between signal and noise before others see the shape of the problem.</p>
-      </div>
-
-      <!-- Slide 4: Pillar 3 -->
-      <div class="m-carousel-slide">
-        <p class="m-phil-num">03</p>
-        <p class="m-phil-title">Empathy is a delivery methodology</p>
-        <p class="m-phil-body">Consistently identified by teams as a leader who makes people feel heard, valued and empowered — not as a cultural nicety, but as the mechanism that unlocks accountability and sustains delivery quality across long, difficult programmes.</p>
-      </div>
-
-      <!-- Slide 5: Pillar 4 -->
-      <div class="m-carousel-slide">
-        <p class="m-phil-num">04</p>
-        <p class="m-phil-title">Commercial integrity as relationship infrastructure</p>
-        <p class="m-phil-body">Long-term client relationships are built on moments where you put the right answer above the convenient one. Recovering a client relationship means being the person who can say what no one else will and then proving it with outcomes.</p>
       </div>
 
     </div>
@@ -889,7 +843,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 
   // Wheel
   let wheelAccum=0,wheelLock=false;
-  const WHEEL_THRESHOLD=500;
+  const WHEEL_THRESHOLD=900;
   document.addEventListener('wheel',e=>{
     if(wheelLock)return;
     const sc=pages[current].querySelector('.page-scroll');
