@@ -170,7 +170,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 
 /* CONTACT */
 .p-contact{background:var(--charcoal);overflow:hidden}
-.p-contact .page-inner{display:grid !important;flex-direction:unset !important}
+.p-contact .page-inner.m-hide-mobile{display:grid;flex-direction:unset}
 .contact-heading{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:1.2rem}
 .contact-heading em{color:var(--accent);font-style:italic}
 .contact-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.85;margin-bottom:2.5rem}
@@ -218,12 +218,12 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
   .mobile-nav-bar{display:flex !important}
 
   .hero-wrap{grid-template-columns:1fr !important;height:100vh !important;position:relative !important}
-  .hero-left{padding:4.5rem 1.4rem 4.5rem !important;justify-content:flex-end !important;position:relative !important;z-index:2 !important;background:linear-gradient(to top,rgba(12,12,10,.9) 0%,rgba(12,12,10,.4) 50%,transparent 100%) !important}
+  .hero-left{padding:4.5rem 1.4rem 6rem !important;justify-content:flex-end !important;position:relative !important;z-index:2 !important;background:linear-gradient(to top,rgba(12,12,10,.95) 0%,rgba(12,12,10,.6) 55%,transparent 100%) !important}
   .hero-right{position:absolute !important;top:0 !important;left:0 !important;right:0 !important;bottom:0 !important;z-index:1 !important}
-  .hero-name{font-size:2.1rem !important;margin-bottom:1rem !important}
+  .hero-name{font-size:1.9rem !important;margin-bottom:.8rem !important;line-height:1.1 !important}
   .hero-eyebrow{font-size:9px !important;margin-bottom:1rem !important}
-  .hero-desc{font-size:12.5px !important;max-width:100% !important;line-height:1.7 !important}
-  .hero-ctas{margin-top:1.5rem !important;gap:.8rem !important}
+  .hero-desc{font-size:12px !important;max-width:100% !important;line-height:1.6 !important}
+  .hero-ctas{margin-top:1.2rem !important;gap:.7rem !important}
   .hero-cta{font-size:9px !important;padding:.7rem 1.1rem !important}
 
   .m-help-card{padding:1.5rem;border:1px solid var(--rule);border-radius:4px;margin-bottom:1rem}
@@ -253,6 +253,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;backgroun
 
   .contact-heading{font-size:2rem !important}
   .contact-links{flex-direction:column !important;gap:1rem !important}
+  .p-contact .page-inner.m-hide-mobile{display:none !important}
 }
 </style>
 </head>
